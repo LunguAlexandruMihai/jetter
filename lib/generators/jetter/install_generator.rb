@@ -6,7 +6,7 @@ module Jetter
       desc "Creates Jetter initializer for your application"
 
       def copy_initializer
-        template "jetter.rb", "config/initializer/jetter.rb"
+        template "jetter.rb", "config/initializers/jetter.rb"
         puts "Install Complete! Put your api keys inside config/initializer/jetter.rb"
       end
     end
