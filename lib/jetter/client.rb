@@ -5,10 +5,10 @@ module Jet
   class Client
     API_URL = 'https://merchant-api.jet.com/api'.freeze
 
-    def initialize(raw_token = {})
-      @api_user = Jetter.configuration.api_user
-      @secret = Jetter.configuration.api_secret
-      @merchant_id = Jetter.configuration.api_merchant
+    def initialize(config = {}, raw_token = {})
+      @api_user = config[:api_user]
+      @secret = config[:api_secret]
+      @merchant_id = config[:api_merchant]
       @id_token = raw_token[:id_token]
       @token_type = raw_token[:token_type]
       @expires_on = Time.parse(raw_token[:expires_on].to_s) if raw_token[:expires_on]

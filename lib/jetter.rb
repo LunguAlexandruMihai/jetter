@@ -6,8 +6,12 @@ module Jetter
     attr_accessor :configuration
   end
 
-  def self.client(credentials = {}, raw_token = {})
-    Client.new(credentials, raw_token)
+  def self.client(raw_token = {})
+    Client.new({
+      api_user: self.configuration.api_user,
+      api_secret: self.configuration.api_secret
+      api_merchant: self.configuration.api_merchant
+    }, raw_token)
   end
 
   def self.configure
