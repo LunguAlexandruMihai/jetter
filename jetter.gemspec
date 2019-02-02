@@ -26,6 +26,6 @@ Gem::Specification.new do |spec|
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   spec.add_dependency "rails", "~> 5.2.2"
-  gem.add_runtime_dependency 'rest-client', '~> 2.0'
-  gem.add_runtime_dependency 'oj', '~> 2.18'
+  spec.add_runtime_dependency 'rest-client', '~> 2.0'
+  spec.add_runtime_dependency 'oj', '~> 2.18'
 end
