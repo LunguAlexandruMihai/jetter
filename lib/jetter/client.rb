@@ -106,10 +106,10 @@ module Jet
   end
 end
 
-require 'jet/client/orders'
-require 'jet/client/returns'
-require 'jet/client/products'
-require 'jet/client/taxonomy'
-require 'jet/client/files'
-require 'jet/client/refunds'
-require 'jet/client/returns'
+require 'jetter/client/orders'
+require 'jetter/client/returns'
+require 'jetter/client/products'
+require 'jetter/client/taxonomy'
+require 'jetter/client/files'
+require 'jetter/client/refunds'
+require 'jetter/client/returns'
