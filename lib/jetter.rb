@@ -1,8 +1,9 @@
 require "jetter/railtie"
+require 'jetter/client'
 
 module Jetter
 
-  def self.client(credentials = {}, raw_token = {})
+  def self.client(raw_token = {})
     credentials = {
       api_user: configuration.api_user,
       api_secret: configuration.api_secret,
@@ -30,5 +31,3 @@ module Jetter
     end
   end
 end
-
-require 'jetter/client'

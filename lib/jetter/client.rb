@@ -1,7 +1,7 @@
 require 'rest-client'
 require 'oj'
 
-module Jet
+module Jetter
   class Client
     API_URL = 'https://merchant-api.jet.com/api'.freeze
 
