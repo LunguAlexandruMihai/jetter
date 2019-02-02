@@ -6,6 +6,10 @@ module Jetter
     attr_accessor :configuration
   end
 
+  def self.client(credentials = {}, raw_token = {})
+    Client.new(credentials, raw_token)
+  end
+
   def self.configure
     self.configuration ||= Configuration.new
     yield(configuration)
@@ -21,3 +25,5 @@ module Jetter
     end
   end
 end
+
+require 'jetter/client'
