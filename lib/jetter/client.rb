@@ -5,7 +5,7 @@ module Jet
   class Client
     API_URL = 'https://merchant-api.jet.com/api'.freeze
 
-    def initialize(config, raw_token = {})
+    def initialize(config = {}, raw_token = {})
       @api_user = config[:api_user]
       @secret = config[:api_secret]
       @merchant_id = config[:api_merchant]

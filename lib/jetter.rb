@@ -31,4 +31,4 @@ module Jetter
   end
 end
 
-require 'jetter/client'
+require_relative 'jetter/client'
