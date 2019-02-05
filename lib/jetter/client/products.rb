@@ -6,6 +6,14 @@ module Jetter
         @client = client
       end
 
+      def update_variation(merchant_sku, body = {})
+        @client.rest_put_with_token("/merchant-skus/#{merchant_sku}/variation", body)
+      end
+
+      def get_variation(merchant_sku)
+        @client.rest_get_with_token("/merchant-skus/#{merchant_sku}/variation")
+      end
+
       def update_inventory(merchant_sku, body = {})
         @client.rest_patch_with_token("/merchant-skus/#{merchant_sku}/inventory", body)
       end

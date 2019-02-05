@@ -59,25 +59,41 @@ module Jetter
       headers = token
       headers[:params] = query_params unless query_params.empty?
       response = RestClient.get("#{API_URL}#{path}", headers)
-      decode_json(response.body) if response.code == 200
+      payload = ''
+      payload = decode_json(response.body) if response.code >= 200 && response.code < 300
+      {code: response.code, response: response, payload: payload}
+    rescue => e
+      {exception: e.class, response: e }
     end
 
     def rest_put_with_token(path, body = {})
       headers = token
       response = RestClient.put("#{API_URL}#{path}", encode_json(body), headers)
-      decode_json(response.body) if response.code == 200
+      payload = ''
+      payload = decode_json(response.body) if response.code >= 200 && response.code < 300
+      {code: response.code, payload: payload}
+    rescue => e
+      {exception: e.class, response: e }
     end
 
     def rest_post_with_token(path, body = {})
       headers = token
       response = RestClient.post("#{API_URL}#{path}", encode_json(body), headers)
-      decode_json(response.body) if response.code == 201
+      payload = ''
+      payload = decode_json(response.body) if response.code >= 200 && response.code < 300
+      {code: response.code, payload: payload}
+    rescue => e
+      {exception: e.class, response: e }
     end
 
     def rest_patch_with_token(path, body = {})
       headers = token
       response = RestClient.patch("#{API_URL}#{path}", encode_json(body), headers)
-      decode_json(response.body) if response.code == 200
+      payload = ''
+      payload = decode_json(response.body) if response.code >= 200 && response.code < 300
+      {code: response.code, payload: payload}
+    rescue => e
+      {exception: e.class, response: e }
     end
 
     def orders
