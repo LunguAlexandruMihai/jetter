@@ -119,13 +119,17 @@ module Jetter
     def refunds
       Refunds.new(self)
     end
+
+    def fullfillment
+      Fullfillment.new(self)
+    end
   end
 end
 
 require 'jetter/client/orders'
-require 'jetter/client/returns'
 require 'jetter/client/products'
 require 'jetter/client/taxonomy'
 require 'jetter/client/files'
 require 'jetter/client/refunds'
 require 'jetter/client/returns'
+require 'jetter/client/fullfillment'
